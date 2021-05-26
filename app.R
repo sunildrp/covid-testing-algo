@@ -44,13 +44,13 @@ ui <- fluidPage(theme= shinytheme("united"),                tags$head(
                                                           label= "Population undergoing testing", 
                                                           min=0,
                                                           max=1000000000000,
-                                                          value=1000),
+                                                          value=100000),
                                             hr(),
                                             numericInput(inputId = "pv",
                                                          label = "Infection prevalence per 100 thousand population",
                                                          min = 0,
                                                          max = 100000,
-                                                         value = 50),
+                                                         value = 20000),
                                             hr(),
                                             selectInput("sce", "Select test scenarios",
                                                         width = "100%", selected = NULL,
@@ -237,7 +237,7 @@ server<-(function(input, output, session) {
             updateTextInput(session, "name_test_1", value = "Ag test")
             updateTextInput(session, "name_test_2", value = "RT PCR")
             updateNumericInput(session, "sn1", value = 70)
-            updateNumericInput(session, "sp1", value = 95)
+            updateNumericInput(session, "sp1", value = 97)
             updateNumericInput(session, "sn2", value = 90)
             updateNumericInput(session, "sp2", value = 98)
             updateNumericInput(session, "t1", value = 0.5)
@@ -506,7 +506,7 @@ observeEvent(input$P & input$pv &
                df4$data$'1st test in algorithm'[2])  
         pp<- c(df12$data$'Infected population'[1], df12$data$'Infected population'[2], df3$data$'Infected population'[1], 
                df4$data$'Infected population'[1])
-        TP <- c(df0$data$'True Positives'[1], df0$data$'True Positives'[2], df3$data$'True Positives'[1], 
+        TP <- c(df12$data$'True Positives'[1], df12$data$'True Positives'[2], df3$data$'True Positives'[1], 
                 df4$data$'True Positives'[1])
         FP <- c(df12$data$'False Positives'[1], df12$data$'False Positives'[2], df3$data$'False Positives'[1], 
                 df4$data$'False Positives'[1])
