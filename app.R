@@ -46,11 +46,11 @@ ui <- fluidPage(theme= shinytheme("united"),                tags$head(
                                                           max=1000000000000,
                                                           value=1000),
                                             hr(),
-                                            sliderInput(inputId = "pv",
-                                                        label = "Infection prevalence",
-                                                        min = 0,
-                                                        max = 20,
-                                                        value = 2),
+                                            numericInput(inputId = "pv",
+                                                         label = "Infection prevalence per 100 thousand population",
+                                                         min = 0,
+                                                         max = 100000,
+                                                         value = 50),
                                             hr(),
                                             selectInput("sce", "Select test scenarios",
                                                         width = "100%", selected = NULL,
@@ -320,7 +320,7 @@ df4 <- reactiveValues(data = NULL)   #create dataframe for confirmatory testing 
 observeEvent(input$P & input$pv &
                  input$sn1 & input$sp1 & input$sn2 & input$sp2 & input$t1 & input$t2, {
                      po<- input$P  # total population
-                     p <- input$pv/100  # disase prevalance
+                     p <- input$pv/100000  # disase prevalance
                      pp<-po*p        #population with disease
                      
                      snx1<- input$sn1/100  #sensitivity of test 1
@@ -388,7 +388,7 @@ observeEvent(input$P & input$pv &
                      input$sn1 & input$sp1 & input$sn2 & input$sp2 & input$t1 & input$t2 & input$k1 &input$k0, {
                          
                          po<- input$P  # total population
-                         p <- input$pv/100  # disase prevalance 
+                         p <- input$pv/100000  # disase prevalance 
                          snx<- c(input$sn1/100, input$sn2/100)  # sensitivities
                          spx<- c(input$sp1/100, input$sp2/100)  # corresponding specificities
                          pp<-po*p        #population with disease
