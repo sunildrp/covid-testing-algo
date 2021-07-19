@@ -580,7 +580,10 @@ observeEvent(input$P & input$pv &
             mutate(cat = factor(cat, levels=c('Test 1 only','Test 2 only','Confirmatory testing for negatives', 'Confirmatory testing for positives'))) %>%
             ggplot(aes(x=cat, y=df)) +
             geom_bar(stat="identity", width = 0.5, 
-                     fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), position=position_dodge())+
+                     #fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)),
+                     fill = c("#5a2259", "#43abb6", "#9E2D4D", "#F08D80"),
+
+                     position=position_dodge())+
             geom_text(aes(label=df), vjust=1.6, color="white", size=5.5)+
             theme_bw(base_size = 14) +
             xlab("") +
@@ -604,7 +607,9 @@ observeEvent(input$P & input$pv &
                                               'Confirmatory testing for positives'))) %>%
             ggplot(aes(x=cat, y=Sn)) +
             geom_bar(stat="identity", width = 0.5, 
-                     fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), position=position_dodge())+
+                     #fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), 
+                     fill = c("#5a2259", "#43abb6", "#9E2D4D", "#F08D80"),
+                     position=position_dodge())+
             geom_text(aes(label=Sn), vjust=1.6, color="white", size=5.5)+
             theme_bw(base_size = 16) +
             xlab("") +
@@ -627,7 +632,9 @@ observeEvent(input$P & input$pv &
                                               'Confirmatory testing for positives'))) %>%
             ggplot(aes(x=cat, y=Sp)) +
             geom_bar(stat="identity", width = 0.5, 
-                     fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), position=position_dodge())+
+                     #fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), 
+                     fill = c("#5a2259", "#43abb6", "#9E2D4D", "#F08D80"),
+                     position=position_dodge())+
             geom_text(aes(label=Sp), vjust=1.6, color="white", size=5.5)+
             theme_bw(base_size = 16) +
             xlab("") +
@@ -650,7 +657,9 @@ observeEvent(input$P & input$pv &
                                               'Confirmatory testing for positives'))) %>%
             ggplot(aes(x=cat, y=Nt)) +
             geom_bar(stat="identity", width = 0.5, 
-                     fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), position=position_dodge())+
+                     #fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), 
+                     fill = c("#5a2259", "#43abb6", "#9E2D4D", "#F08D80"),
+                     position=position_dodge())+
             geom_text(aes(label=Nt), vjust=1.6, color="white", size=5.5)+
             theme_bw(base_size = 16) +
             xlab("") +
@@ -673,7 +682,9 @@ observeEvent(input$P & input$pv &
                                               'Confirmatory testing for positives'))) %>%
             ggplot(aes(x=cat, y=Tr)) +
             geom_bar(stat="identity", width = 0.5, 
-                     fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), position=position_dodge())+
+                     #fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), 
+                     fill = c("#5a2259", "#43abb6", "#9E2D4D", "#F08D80"),
+                     position=position_dodge())+
             geom_text(aes(label=Tr), vjust=1.6, color="white", size=5.5)+
             theme_bw(base_size = 16) +
             xlab("") +
@@ -696,7 +707,9 @@ observeEvent(input$P & input$pv &
                                               'Confirmatory testing for positives'))) %>%
             ggplot(aes(x=cat, y=TP)) +
             geom_bar(stat="identity", width = 0.5, 
-                     fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), position=position_dodge())+
+                     #fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)),
+                     fill = c("#5a2259", "#43abb6", "#9E2D4D", "#F08D80"),
+                     position=position_dodge())+
             geom_text(aes(label=TP), vjust=1.6, color="white", size=5.5)+
             theme_bw(base_size = 16) +
             xlab("") +
@@ -719,7 +732,9 @@ observeEvent(input$P & input$pv &
                                               'Confirmatory testing for positives'))) %>%
             ggplot(aes(x=cat, y=TN)) +
             geom_bar(stat="identity", width = 0.5, 
-                     fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), position=position_dodge())+
+                     #fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), 
+                     fill = c("#5a2259", "#43abb6", "#9E2D4D", "#F08D80"),
+                     position=position_dodge())+
             geom_text(aes(label=TN), vjust=1.6, color="white", size=5.5)+
             theme_bw(base_size = 16) +
             xlab("") +
@@ -742,7 +757,9 @@ observeEvent(input$P & input$pv &
                                               'Confirmatory testing for positives'))) %>%
             ggplot(aes(x=cat, y=FP)) +
             geom_bar(stat="identity", width = 0.5, 
-                     fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), position=position_dodge())+
+                     #fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), 
+                     fill = c("#5a2259", "#43abb6", "#9E2D4D", "#F08D80"),
+                     position=position_dodge())+
             geom_text(aes(label=FP), vjust=1.6, color="white", size=5.5)+
             theme_bw(base_size = 16) +
             xlab("") +
@@ -765,7 +782,9 @@ observeEvent(input$P & input$pv &
                                               'Confirmatory testing for positives'))) %>%
             ggplot(aes(x=cat, y=FN)) +
             geom_bar(stat="identity", width = 0.5, 
-                     fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), position=position_dodge())+
+                     #fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), 
+                     fill = c("#5a2259", "#43abb6", "#9E2D4D", "#F08D80"),
+                     position=position_dodge())+
             geom_text(aes(label=FN), vjust=1.6, color="white", size=5.5)+
             theme_bw(base_size = 16) +
             xlab("") +
@@ -788,7 +807,9 @@ observeEvent(input$P & input$pv &
                                               'Confirmatory testing for positives'))) %>%
             ggplot(aes(x=cat, y=PPV)) +
             geom_bar(stat="identity", width = 0.5, 
-                     fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), position=position_dodge())+
+                     #fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), 
+                     fill = c("#5a2259", "#43abb6", "#9E2D4D", "#F08D80"),
+                     position=position_dodge())+
             geom_text(aes(label=PPV), vjust=1.6, color="white", size=5.5)+
             theme_bw(base_size = 16) +
             xlab("") +
@@ -811,7 +832,9 @@ observeEvent(input$P & input$pv &
                                               'Confirmatory testing for positives'))) %>%
             ggplot(aes(x=cat, y=NPV)) +
             geom_bar(stat="identity", width = 0.5, 
-                     fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)), position=position_dodge())+
+                     #fill = c(rep("steelblue",1), rep("peru",1), ("sienna"), rep("olivedrab",1)),
+                     fill = c("#5a2259", "#43abb6", "#9E2D4D", "#F08D80"),
+                     position=position_dodge())+
             geom_text(aes(label=NPV), vjust=1.6, color="white", size=5.5)+
             theme_bw(base_size = 16) +
             xlab("") +
