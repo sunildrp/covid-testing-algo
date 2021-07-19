@@ -102,7 +102,7 @@ ui <- fluidPage(theme= shinytheme("united"),                tags$head(
                                                         fluidRow(
                                                             splitLayout(cellWidths = c("3%", "65%", "30%"),
                                                                         "",
-                                                                        HTML('<a href = "https://www.finddx.org"><img src= "FIND.png" width = "25%"/></a>'),
+                                                                        HTML('<a href = "https://www.finddx.org"><img src= "FIND_Logo_V10-color-white bg.jpeg" width = "25%"/></a>'),
                                                                         HTML('<img src="OXFORD.png" width = "20%"/></a>'))),
                                                         br(),
                                                         h4(strong("Comparison scenarios:")),
