@@ -51,10 +51,10 @@ ui <- fluidPage(theme= shinytheme("united"),                tags$head(
                                                          min = 0,
                                                          max = 100000,
                                                          value = 20000),
-                                    #        hr(),
-                                    #        selectInput("sce", "Select test scenarios",
-                                    #                    width = "100%", selected = NULL,
-                                    #                    c("", "Ag test and RT-PCR", "Panbio Ag and NowCheck Ag", "Panbio Ag and SD Biosensor Ag", "NowCheck Ag and SD Biosensor Ag", "My tests")),
+                                            hr(),
+                                            selectInput("sce", "Select test scenarios",
+                                                        width = "100%", selected = NULL,
+                                                        c("", "Ag test and RT-PCR", "Panbio Ag and NowCheck Ag", "Panbio Ag and SD Biosensor Ag", "NowCheck Ag and SD Biosensor Ag", "My tests")),
                                             hr(),
                                             textInput("name_test_1", "Test #1", width = "100%"),
                                             conditionalPanel(condition = "input.name_test_1 != ''",
@@ -224,62 +224,62 @@ server<-(function(input, output, session) {
     })
     
     # select test values based on predefined scenarios    
-#    observeEvent(input$sce, {
-#        if(input$sce == 'Ag test and RT-PCR'){
-#            updateTextInput(session, "name_test_1", value = "Ag test")
-#            updateTextInput(session, "name_test_2", value = "RT PCR")
-#            updateNumericInput(session, "sn1", value = 70)
-#            updateNumericInput(session, "sp1", value = 97)
-#            updateNumericInput(session, "sn2", value = 90)
-#            updateNumericInput(session, "sp2", value = 98)
-#            updateNumericInput(session, "t1", value = 0.5)
-#            updateNumericInput(session, "t2", value = 24)
-#        }
+    observeEvent(input$sce, {
+        if(input$sce == 'Ag test and RT-PCR'){
+            updateTextInput(session, "name_test_1", value = "Ag test")
+            updateTextInput(session, "name_test_2", value = "RT PCR")
+            updateNumericInput(session, "sn1", value = 70)
+            updateNumericInput(session, "sp1", value = 97)
+            updateNumericInput(session, "sn2", value = 90)
+            updateNumericInput(session, "sp2", value = 98)
+            updateNumericInput(session, "t1", value = 0.5)
+            updateNumericInput(session, "t2", value = 24)
+        }
         
-#        if(input$sce == 'Panbio Ag and NowCheck Ag'){
-#            updateTextInput(session, "name_test_1", value = "Panbio Ag")
-#            updateTextInput(session, "name_test_2", value = "NowCheck Ag")
-#            updateNumericInput(session, "sn1", value = 86)
-#            updateNumericInput(session, "sp1", value = 99)
-#            updateNumericInput(session, "sn2", value = 89)
-#            updateNumericInput(session, "sp2", value = 97)
-#            updateNumericInput(session, "t1", value = 0.5)
-#            updateNumericInput(session, "t2", value = 0.5)
-#        }
+        if(input$sce == 'Panbio Ag and NowCheck Ag'){
+            updateTextInput(session, "name_test_1", value = "Panbio Ag")
+            updateTextInput(session, "name_test_2", value = "NowCheck Ag")
+            updateNumericInput(session, "sn1", value = 86)
+            updateNumericInput(session, "sp1", value = 99)
+            updateNumericInput(session, "sn2", value = 89)
+            updateNumericInput(session, "sp2", value = 97)
+            updateNumericInput(session, "t1", value = 0.5)
+            updateNumericInput(session, "t2", value = 0.5)
+        }
         
-#        if(input$sce == 'Panbio Ag and SD Biosensor Ag'){
-#            updateTextInput(session, "name_test_1", value = "Panbio Ag")
-#            updateTextInput(session, "name_test_2", value = "SD Biosensor Ag")
-#            updateNumericInput(session, "sn1", value = 86)
-#            updateNumericInput(session, "sp1", value = 99)
-#            updateNumericInput(session, "sn2", value = 80)
-#            updateNumericInput(session, "sp2", value = 99)
-#            updateNumericInput(session, "t1", value = 0.5)
-#            updateNumericInput(session, "t2", value = 0.5)
-#        }
+        if(input$sce == 'Panbio Ag and SD Biosensor Ag'){
+            updateTextInput(session, "name_test_1", value = "Panbio Ag")
+            updateTextInput(session, "name_test_2", value = "SD Biosensor Ag")
+            updateNumericInput(session, "sn1", value = 86)
+            updateNumericInput(session, "sp1", value = 99)
+            updateNumericInput(session, "sn2", value = 80)
+            updateNumericInput(session, "sp2", value = 99)
+            updateNumericInput(session, "t1", value = 0.5)
+            updateNumericInput(session, "t2", value = 0.5)
+        }
         
-#        if(input$sce == 'NowCheck Ag and SD Biosensor Ag'){
-#            updateTextInput(session, "name_test_1", value = "NowCheck Ag")
-#            updateTextInput(session, "name_test_2", value = "SD Biosensor Ag")
-#            updateNumericInput(session, "sn1", value = 89)
-#            updateNumericInput(session, "sp1", value = 97)
-#            updateNumericInput(session, "sn2", value = 80)
-#            updateNumericInput(session, "sp2", value = 99)
-#            updateNumericInput(session, "t1", value = 0.5)
-#            updateNumericInput(session, "t2", value = 0.5)
-#        }
+        if(input$sce == 'NowCheck Ag and SD Biosensor Ag'){
+            updateTextInput(session, "name_test_1", value = "NowCheck Ag")
+            updateTextInput(session, "name_test_2", value = "SD Biosensor Ag")
+            updateNumericInput(session, "sn1", value = 89)
+            updateNumericInput(session, "sp1", value = 97)
+            updateNumericInput(session, "sn2", value = 80)
+            updateNumericInput(session, "sp2", value = 99)
+            updateNumericInput(session, "t1", value = 0.5)
+            updateNumericInput(session, "t2", value = 0.5)
+        }
         
-#        if(input$sce == 'My tests'){
-#            updateTextInput(session, "name_test_1", value = "")
-#            updateTextInput(session, "name_test_2", value = "")
-#            updateNumericInput(session, "sn1", value = "")
-#            updateNumericInput(session, "sp1", value = "")
-#            updateNumericInput(session, "sn2", value = "")
-#            updateNumericInput(session, "sp2", value = "")
-#            updateNumericInput(session, "t1", value = "")
-#            updateNumericInput(session, "t2", value = "")
-#        }
-#    })
+        if(input$sce == 'My tests'){
+            updateTextInput(session, "name_test_1", value = "")
+            updateTextInput(session, "name_test_2", value = "")
+            updateNumericInput(session, "sn1", value = "")
+            updateNumericInput(session, "sp1", value = "")
+            updateNumericInput(session, "sn2", value = "")
+            updateNumericInput(session, "sp2", value = "")
+            updateNumericInput(session, "t1", value = "")
+            updateNumericInput(session, "t2", value = "")
+        }
+    })
     ## change test order
     observeEvent(input$'ord', {
         if(input$ord == "Order 1"){
